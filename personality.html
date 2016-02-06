@@ -42,7 +42,7 @@
 
 					
 					<section>
-						<form method="post" action="#">
+						<form action="#">
 						    <p class="text-center">I am the life of the party</p>
 							<div class="row uniform">
 								<div class="2u 12u$(small)">
@@ -547,8 +547,7 @@
 							
 						
 									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="special" /></li>
-										<li><input type="reset" value="Reset" /></li>
+										<li><input type="submit" value="Submit Answers" class="special" onclick="scoreTest()" /></li>
 									</ul>
 								</div>
 							</div>
@@ -573,6 +572,382 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			
+			<script>
+				function scoreTest() {
+					var E = 20;
+					var C = 14;
+					var A = 14;
+					var N = 38;
+					var O = 8;
+					var q = document.getElementsByName('question1');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							E += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question2');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							A -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question3');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							C += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question4');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							N -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question5');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							O += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question6');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							E -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question7');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							A += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question8');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							C -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question9');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							N += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question10');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							O -= q[i].value;
+							break;
+						}
+					}
+				}
+				
+				
+				
+				var q = document.getElementsByName('question11');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							E += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question12');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							A -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question13');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							C += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question14');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							N -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question15');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							O += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question16');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							E -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question17');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							A += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question18');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							C -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question19');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							N += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question20');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							O -= q[i].value;
+							break;
+						}
+					}
+				}
+				
+				
+				
+				var q = document.getElementsByName('question21');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							E += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question22');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							A -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question23');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							C += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question24');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							N -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question25');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							O += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question26');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							E -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question27');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							A += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question28');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							C -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question29');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							N -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question30');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							O -= q[i].value;
+							break;
+						}
+					}
+				}
+				
+				
+				
+				var q = document.getElementsByName('question31');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							E += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question32');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							A -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question33');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							C += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question34');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							N -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question35');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							O += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question36');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							E -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question37');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							A += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question38');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							C -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question39');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							N -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question40');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							O += q[i].value;
+							break;
+						}
+					}
+				}
+				
+				
+				
+				var q = document.getElementsByName('question41');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							E += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question42');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							A += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question43');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							C += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question44');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							N -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question45');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							O += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question46');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							E -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question47');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							A += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question48');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							C += q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question49');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							N -= q[i].value;
+							break;
+						}
+					}
+					q = document.getElementsByName('question50');
+					for (var i = 0; i < 5; i++) {
+						if (q[i].checked) {
+							O += q[i].value;
+							break;
+						}
+					}
+				}
+			</script>
 
 	</body>
 </html>
