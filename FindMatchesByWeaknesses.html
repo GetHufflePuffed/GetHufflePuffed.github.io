@@ -42,7 +42,7 @@ Created by John Bagsby
               //console.log(childData);
               lastName.push(childData);
             }
-            else if(key=="key_words")
+            else if(key=="my_strengths")
             {
               //console.log(childData);
               var split=childData.split(",");
@@ -86,7 +86,7 @@ Created by John Bagsby
             if (!user) {
                 return;
             }
-            currentKeywords=userValue.key_words.split(",");
+            currentKeywords=userValue.my_weaknesses.split(",");
             currentLastName=userValue.last_name;
             currentFirstName=userValue.first_name;
             });
@@ -105,8 +105,8 @@ Created by John Bagsby
                   {
                     if(firstName[i]!=currentFirstName && lastName[i]!=currentLastName)
                     {
-                      console.log(firstName[i]+" "+lastName[i]+" matches with keyword "+currentKeywords[k]+" and is a "+mentee[i]);
-                      var comment = firstName[i]+" "+lastName[i]+" matches with keyword "+currentKeywords[k]+" and is a "+mentee[i];
+                      console.log(firstName[i]+" "+lastName[i]+" matches bc they are strong at "+currentKeywords[k]+" and is a "+mentee[i]);
+                      var comment = firstName[i]+" "+lastName[i]+" matches bc they are strong at "+currentKeywords[k]+" and is a "+mentee[i];
                       var newParagraph = document.createElement('p');
                       newParagraph.textContent = comment;
                       document.getElementById("updateDiv").appendChild(newParagraph);
