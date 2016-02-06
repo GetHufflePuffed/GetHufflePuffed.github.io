@@ -13,17 +13,14 @@ Created by John Bagsby
 
     <script>
       var ref = new Firebase("https://popping-fire-6153.firebaseio.com/");
-    
+      var usersRef = ref.child("users");
+
       function createaccount()
       {
-        alert("HERE");
-        var fname = document.getElementById("fname").value;
-        var lname = document.getElementById("lname").value;
+       
         var email_create = document.getElementById("email_create").value;
         var password_create = document.getElementById("password_create").value;
-        var type = document.getElementById("type").value;
-        var keywords=document.getElementById("keywords_create");
-
+    
         ref.createUser({
           email: email_create,
           password: password_create
@@ -43,22 +40,8 @@ Created by John Bagsby
             alert("Successfully created user account.");
           }
         });
-
-        try
-        {
-          var usersRef = ref.child("users");
-          usersRef.child(email).set({
-            first_name: fname,
-            last_name: lname,
-            mentee_mentor=type,
-            key_Tags=keywords
-          });
-        }
-        catch(exception)
-        {
-          alert(exception);
-        }
       }
+    
     </script>
     
     <h1 id = "header">Register</h1>
@@ -70,23 +53,12 @@ Created by John Bagsby
     <p>
     Please fill out the following form.
     </p>
-
-    <h3>Select your account type</h3>
-    <div class = "transbox">
-    <select id="type">
-      <option value="mentee">I want to be a mentee</option>
-      <option value="mentor">I want to be a mentor</option>
-    </select><br><br>
-
-    <input type="text" id="fname" placeholder="First Name"><br><br>
     
-    <input type="text" id="lname" placeholder="Last Name"><br><br>
+    <div class = "transbox">
     
     <input type="text" id="email_create" placeholder="Email"><br><br>
     
     <input type="password" id="password_create" placeholder="Password"><br><br>
-
-    <input type="keywords" id="keywords_create" placeholder="Keywords I'm looking for">
     </div>
 
     <input type="submit" style="width:110;height:25;background-color:lightblue;color:blue" onclick="createaccount();" value="Create Account">
