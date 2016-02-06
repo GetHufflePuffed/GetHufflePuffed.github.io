@@ -1380,11 +1380,15 @@
 					var N = 38;
 					var O = 8;
 					var q = document.getElementsByName('question1');
+					try {
 					for (var i = 0; i < 5; i++) {
 						if (q[i].checked) {
 							E += q[i].value;
-							break;
+							//break;
 						}
+					}
+					} catch (exception) {
+					alert(exception);
 					}
 					alert("E:", E);
 					q = document.getElementsByName('question2');
