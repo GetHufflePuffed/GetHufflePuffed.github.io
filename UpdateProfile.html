@@ -25,12 +25,16 @@ Created by John Bagsby
         var lastname = document.getElementById("lname").value;
         var mentormentee=document.getElementById("type").value;
         var keyword=document.getElementById("keywords").value;
+        var strengths=document.getElementById("strengths").value;
+        var weaknesses=document.getElementById("weaknesses").value;
         var usersRef = ref.child("users");
         usersRef.child(user).set({
           first_name: firstname,
           last_name: lastname,
           mentor_mentee: mentormentee,
-          key_words:keyword
+          key_words:keyword,
+          my_strengths:strengths,
+          my_weaknesses:weaknesses
         });
         alert("Successfully updated profile.")
         }
@@ -65,6 +69,8 @@ Created by John Bagsby
       <option value="Both"> I am looking to be both a mentor/mentee.</option>
     </select><br><br>
     <input type="text" id="keywords" placeholder="Keywords I am looking for"><br><br>
+    <input type="text" id="strengths" placeholder="My strengths: "><br><br>
+    <input type="text" id="weaknesses" placeholder="My weaknesses: "><br><br>
     </div>
     
     <input type="submit" style="width:100;height:25;background-color:lightblue;color:blue" onclick="update();" value="Update Profile"><br><br>
