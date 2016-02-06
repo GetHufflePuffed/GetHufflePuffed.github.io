@@ -52,6 +52,7 @@ Created by John Bagsby
           }else{
             alert("Successfully created user account.");
 			window.location.replace("Login.html");
+			return false;
           }
         });
       }
@@ -76,7 +77,7 @@ Created by John Bagsby
 					<section id="main" class="wrapper">
 						<div class="inner">
 							<h1 class="major">Registration</h1>
-							<span class="image fit"><img src="images/cat4.jpg" alt="" /></span>
+							<span class="image fit"><img src="images/cat3.jpg" alt="" /></span>
 							<p>Please fill out the following form:</p>
 							<form>
 							<div class = "transbox">
@@ -88,7 +89,7 @@ Created by John Bagsby
 							<INPUT TYPE="hidden" NAME="redirect" VALUE="Login.html">
 							</div>
 
-							<input type="submit" class="special" onclick="createaccount();" value="Create Account">
+							<input type="submit" class="special" onclick="return createaccount();" value="Create Account">
 							</form>
 							
 							<style>

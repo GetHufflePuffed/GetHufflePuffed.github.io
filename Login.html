@@ -28,32 +28,39 @@ Created by John Bagsby
       var ref = new Firebase("https://popping-fire-6153.firebaseio.com/");
       var usersRef = ref.child("users");
 
-      function createaccount()
-      {
-       
-        var email_create = document.getElementById("email_create").value;
-        var password_create = document.getElementById("password_create").value;
+      <script>
+      var ref = new Firebase("https://popping-fire-6153.firebaseio.com/");
     
-        ref.createUser({
-          email: email_create,
-          password: password_create
-        }, function(error, userData){
+      function login()
+      {
+        var email_login = document.getElementById("email_login").value;
+        var password_login = document.getElementById("password_login").value;
+    
+        ref.authWithPassword({
+          "email": ""+email_login,
+          "password": ""+password_login
+        }, function(error, authData) {
           if(error){
-            switch(error.code){
-              case "EMAIL_TAKEN":
-                alert("The new user account cannot be created because the email is already in use.");
-              break;
-              case "INVALID_EMAIL":
-                alert("The specified email is not a valid email.");
-                break;
-              default:
-                alert("Error creating user:", error);
-            }
+            alert("Login Failed!", error);
           }else{
-            alert("Successfully created user account.");
+            alert("Successfully logged in.", authData);
+            // similar behavior as an HTTP redirect
+            window.location.replace("UpdateProfile.html");
           }
         });
+
+        // Create a callback which logs the current auth state
+        function authDataCallback(authData) {
+          if (authData) {
+            console.log("User " + authData.uid + " is logged in with " + authData.provider);
+          } else {
+            console.log("User is logged out");
+          }
+        }
+        // Register the callback to be fired every time auth state changes
+        ref.onAuth(authDataCallback)
       }
+    </script>
     
     </script>
 		<!-- Header -->
@@ -82,7 +89,7 @@ Created by John Bagsby
 								<input type="password" id="password_login" placeholder="Password"><br><br>
 							</div>
 								
-							<input type="submit" style="width:100;height:25;background-color:lightblue;color:blue" onclick="login();" value="Login"><br><br>
+							<input type="submit" class="special" onclick="login();" value="Login"><br><br>
 					</section>
 
 			</div>
