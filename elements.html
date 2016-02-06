@@ -309,8 +309,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 											</div>
 											<div class="12u$">
 												<ul class="actions">
-													<li><input type="submit" value="Send Message" class="special" /></li>
-													<li><input type="reset" value="Reset" /></li>
+													<li><input type="submit" value="Send Message" class="special" onclick="scoreTest()" /></li>
 												</ul>
 											</div>
 										</div>
@@ -363,15 +362,17 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script>
-				var radios = document.getElementsByName('demo-priority');
-	
-				for (var i = 0, length = radios.length; i < length; i++) {
-					if (radios[i].checked) {
-						// do whatever you want with the checked radio
-						alert(radios[i].value);
+				function scoreTest() {
+					var radios = document.getElementsByName('demo-priority');
+		
+					for (var i = 0, length = radios.length; i < length; i++) {
+						if (radios[i].checked) {
+							// do whatever you want with the checked radio
+							alert(radios[i].value);
 
-						// only one radio can be logically checked, don't check the rest
-						break;
+							// only one radio can be logically checked, don't check the rest
+							break;
+						}
 					}
 				}
 			</script>
