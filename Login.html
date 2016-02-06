@@ -1,71 +1,109 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <!--
 
 Created by John Bagsby
 2/3/2016
 
+*edited for radical style and groovy new looks*
+
 -->
 <html>
-  <head>
-    <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
-  </head>
-
-  <body style="background-image:url(http://eskipaper.com/images/blurred-wallpapers-1.jpg);">
-
-    <script>
+	<head>
+		<title>Sign In</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+	</head>
+	<body>
+	<script>
       var ref = new Firebase("https://popping-fire-6153.firebaseio.com/");
-    
-      function login()
+      var usersRef = ref.child("users");
+
+      function createaccount()
       {
-        var email_login = document.getElementById("email_login").value;
-        var password_login = document.getElementById("password_login").value;
+       
+        var email_create = document.getElementById("email_create").value;
+        var password_create = document.getElementById("password_create").value;
     
-        ref.authWithPassword({
-          "email": ""+email_login,
-          "password": ""+password_login
-        }, function(error, authData) {
+        ref.createUser({
+          email: email_create,
+          password: password_create
+        }, function(error, userData){
           if(error){
-            alert("Login Failed!", error);
+            switch(error.code){
+              case "EMAIL_TAKEN":
+                alert("The new user account cannot be created because the email is already in use.");
+              break;
+              case "INVALID_EMAIL":
+                alert("The specified email is not a valid email.");
+                break;
+              default:
+                alert("Error creating user:", error);
+            }
           }else{
-            alert("Successfully logged in.", authData);
-            // similar behavior as an HTTP redirect
-            window.location.replace("UpdateProfile.html");
+            alert("Successfully created user account.");
           }
         });
-
-        // Create a callback which logs the current auth state
-        function authDataCallback(authData) {
-          if (authData) {
-            console.log("User " + authData.uid + " is logged in with " + authData.provider);
-          } else {
-            console.log("User is logged out");
-          }
-        }
-        // Register the callback to be fired every time auth state changes
-        ref.onAuth(authDataCallback)
       }
+    
     </script>
-    
-    <h1 id = "header">Login</h1>
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">AT&T Mentor Matching</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html" class="active">Sign In</a></li>
+						<li><a href="elements.html">My Profile</a></li>
+					</ul>
+				</nav>
+			</header>
 
-    <hr style="border: dashed 3px;" />
-    
-    <h2><u>Returning User?</u></h2>
-    
-    <div class = "transbox">
-    <input type="text" id="email_login" placeholder="Email"><br><br>
-    <input type="password" id="password_login" placeholder="Password"><br><br>
-    </div>
-    
-    <input type="submit" style="width:100;height:25;background-color:lightblue;color:blue" onclick="login();" value="Login"><br><br>
-    
-    <hr style="border: dashed 3px;" />
-    
-    <style>
-      div.transbox
-      {
-        opacity: 0.65;
-      }
-    </style>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-  </body>
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Registration</h1>
+							<span class="image fit"><img src="images/cat3.jpg" alt="" /></span>
+							<p>Great! Sign in below to authenticate your account!</p>
+							<div class = "transbox">
+								<input type="text" id="email_login" placeholder="Email"><br><br>
+								<input type="password" id="password_login" placeholder="Password"><br><br>
+							</div>
+								
+							<input type="submit" style="width:100;height:25;background-color:lightblue;color:blue" onclick="login();" value="Login"><br><br>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
