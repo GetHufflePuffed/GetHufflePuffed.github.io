@@ -51,8 +51,8 @@ Created by John Bagsby
             }
           }else{
             alert("Successfully created user account.");
-			window.location.replace("Login.html");
-			return false;
+			//window.location.replace("Login.html");
+			//return false;
           }
         });
       }
@@ -79,17 +79,16 @@ Created by John Bagsby
 							<h1 class="major">Registration</h1>
 							<span class="image fit"><img src="images/cat3.jpg" alt="" /></span>
 							<p>Please fill out the following form:</p>
-							<form>
+							<form action="Login.html">
 							<div class = "transbox">
     
 							<input type="text" id="email_create" placeholder="Email"><br><br>
 							
 							<input type="password" id="password_create" placeholder="Password"><br><br>
 							
-							<INPUT TYPE="hidden" NAME="redirect" VALUE="Login.html">
 							</div>
 
-							<input type="submit" class="special" onclick="return createaccount()" value="Create Account">
+							<input type="submit" class="special" onclick="createaccount();" value="Create Account">
 							</form>
 							
 							<style>
