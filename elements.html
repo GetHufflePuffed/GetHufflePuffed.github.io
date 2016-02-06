@@ -285,15 +285,15 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 												</div>
 											</div>
 											<div class="4u 12u$(small)">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+												<input type="radio" id="demo-priority-low" value="1" name="demo-priority" checked>
 												<label for="demo-priority-low">Low</label>
 											</div>
 											<div class="4u 12u$(small)">
-												<input type="radio" id="demo-priority-normal" name="demo-priority">
+												<input type="radio" id="demo-priority-normal" value="2" name="demo-priority">
 												<label for="demo-priority-normal">Normal</label>
 											</div>
 											<div class="4u$ 12u$(small)">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
+												<input type="radio" id="demo-priority-high" value="3" name="demo-priority">
 												<label for="demo-priority-high">High</label>
 											</div>
 											<div class="6u 12u$(small)">
@@ -362,6 +362,19 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script>
+				var radios = document.getElementsByName('demo-priority');
+	
+				for (var i = 0, length = radios.length; i < length; i++) {
+					if (radios[i].checked) {
+						// do whatever you want with the checked radio
+						alert(radios[i].value);
+
+						// only one radio can be logically checked, don't check the rest
+						break;
+					}
+				}
+			</script>
 
 	</body>
 </html>
